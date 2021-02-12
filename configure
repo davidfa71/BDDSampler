@@ -1,0 +1,9 @@
+#!/bin/bash
+UNAME_S=$(uname -s)
+cd cudd-3.0.0
+touch configure Makefile.am Makefile.in aclocal.m4  config.h.in
+if [[ $UNAME_S = "Linux" ]]; then
+    ./configure --libdir=$(pwd)/../lib --includedir=$(pwd)/../include CFLAGS="-g -O2" CXXFLAGS="-O2 -std=c++11 -g" --enable-shared --enable-obj --enable-dddmp
+elif [[ $UNAME_S = "Darwin" ]]; then
+    ./configure --libdir=$(pwd)/../lib --includedir=$(pwd)/../include CFLAGS="-g -O2" CC=clang CXX=clang++ CXXFLAGS="-O2 -std=c++11 -stdlib=libc++ -g" --enable-shared --enable-obj --enable-dddmp
+fi

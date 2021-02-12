@@ -1,0 +1,59 @@
+=============================================================================
+Paper reference
+
+We provide BDDSampler, a program to produce a ramdom uniform sample from a 
+BDD file in DDDMP format. It has been test in macOS and Linux.
+
+
+=============================================================================
+- COMPILING FROM SOURCE ----------------------------------------------------- 
+=============================================================================
+
+1) Install first the buildinging tools:
+  
+  1.1) Linux: install the building tools by typing in the terminal:
+   
+       sudo apt install build-essential 
+  
+  1.2) macOS: install Xcode to get the building tools.
+
+2) Install GMP (GNU Multiple Precision Arithmetic Library). 
+  
+   2.1) Linux: GMP can be installed in linux by typing in the terminal: 
+   
+       sudo apt install libgmp3-dev       
+  
+   2.2) macOs: GMP can be compiled with the mac ports application 
+        (www.macports.org) typing:
+
+        sudo port install gmp
+
+
+4) To compile our version of the CUDD library and BDDSampler:
+
+  4.1) Type ./configure in the root directory
+
+  4.2) Type make
+
+
+5) In Linux, please add the lib dir to LD_LIBRARY_PATH.
+
+=============================================================================
+- TESTING THE PROGRAM ----------------------------------------------------- 
+=============================================================================
+
+The usage of the tool is very simple. The program takes two arguments, namely the
+number of samples to be generated and the BDD file (in DDDMP-3.0 format).Two 
+optional arguments are available:
+-v, for verbose output while computing the probabilities of the nodes
+-names, to output variable names, such as X, or not X. The default is just to
+produce 0s and 1s corresponding to the variables in the order specified by the
+.varnames field in the BDD file.
+
+
+The program will produce the sample through the standard output, one line per
+product and the variables are ordered according the .varnames field in the BDD.
+It will not work with DDDMP files version 2.0. The only difference between 
+version 2.0 and version 3.0 is the addition of the .varnames field to the header.
+ 
+
