@@ -36,7 +36,9 @@ BDD file in DDDMP format. It has been test in macOS and Linux.
   4.2) Type make
 
 
-5) In Linux, please add the lib dir to LD_LIBRARY_PATH.
+5) In Linux, please add the lib dir to LD_LIBRARY_PATH:
+
+      export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:lib"
 
 =============================================================================
 - TESTING THE PROGRAM ----------------------------------------------------- 
