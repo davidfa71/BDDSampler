@@ -7,7 +7,7 @@ BDDSampler is a software artifact of the following paper submitted for publicati
 
 ## Instructions 
 
-The instructions for compiling are in the INSTALL file.
+The instructions for compiling are in the `INSTALL.txt` file.
 
 This program generates random samples for a BDD according to the explanation given by Donald 
 Knuth in section 7.1.4 of The Art of Computer Programming: First, all the nodes are decorated
