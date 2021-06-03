@@ -88,11 +88,7 @@ std::string nameRandom(cuddAdapter *a) {
 }
 
 
-
 std::vector<bool> genRandom(cuddAdapter* a) {
-    //unsigned int temp = (unsigned int) get_cpu_time() % 1000000;
-    //cout << "Initializing random seed " << temp << endl;
-    //srandom(temp);
     // We assume the probabilities have been computed already
     DdNode *g1, *g0;
     int index;

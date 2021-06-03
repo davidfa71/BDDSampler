@@ -35,7 +35,7 @@
 #define HAVE_MATH_H 1
 
 /* Define to 1 if you have the <memory.h> header file. */
-#define HAVE_MEMORY_H 1
+/* #undef HAVE_MEMORY_H */
 
 /* Define to 1 if your compiler supports enough C++11 */
 #define HAVE_MODERN_CXX 1

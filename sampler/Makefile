@@ -1,4 +1,4 @@
-_OBJ=BDDSampler.o cuddAdapter.o humanNums.o mytime.o synExp.o cuddAlgo.o TravInfo.o OneComponent.o MultiComponents.o Traverser.o 
+_OBJ=BDDSampler.o cuddAdapter.o humanNums.o mytime.o synExp.o cuddAlgo.o TravInfo.o OneComponent.o MultiComponents.o Traverser.o Trie.o
 OBJ = $(patsubst %,../obj/%,$(_OBJ))
 DEP = $(OBJ:.o=.d)  # one dependency file for each source
 

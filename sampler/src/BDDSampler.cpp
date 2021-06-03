@@ -14,20 +14,22 @@
 
 #include "cuddAlgo.hpp"
 #include "cuddAdapter.hpp"
-
+#include "Trie.hpp"
 
 
 void usage(std::string name) {
     std::ostringstream ost;
     ost << name << ": Generates a random sampling of a BDD, with variable names or in numbers" << std::endl;
-    ost << "Usage: " << name << " [-names] [-v] <number of examples> <bdd file>" << std::endl;
+    ost << "Usage: " << name << " [-norep] [-names] [-v] <number of examples> <bdd file>" << std::endl;
+    ost << " -norep : No replacement." << std::endl;
+    ost << " -v     : verbose." << std::endl;
     std::cerr << ost.str();
 }
 
 int main(int argc, char** argv) {
     long first, last;
     first = get_cpu_time();
-    if (argc < 2 || argc > 7) {
+    if (argc < 2 || argc > 8) {
         usage(argv[0]);
         exit(-1);
     }
@@ -35,9 +37,15 @@ int main(int argc, char** argv) {
     int verbose = 0;
     int i       = 1;
     bool names  = false;
+    bool rep    = true;
     while (i < argc-2) {
         if (std::string(argv[i]) == "-v") {
             verbose = 1;
+            i++;
+            continue;
+        }
+        if (std::string(argv[i]) == "-norep") {
+            rep = false;
             i++;
             continue;
         }
@@ -57,13 +65,23 @@ int main(int argc, char** argv) {
     int num = atoi(argv[i++]);
     adapter->readBDD(argv[i]);
     compProbabilities(verbose, adapter);
-    // The combination function that computes the probabilites relies on a side effect to 
+    unsigned int temp = (unsigned int) get_cpu_time() % 1000000;
+    srandom(temp);
+    // The combination function that computes the probabilites relies on a side effect to
     // insert in a std::map which is not thread-safe, so multithreading is
     // out of the question
-    if (names)
-        for(int x = 0; x < num;x++)
-            std::cout << nameRandom(adapter)  << std::endl;
+    if (!rep) {
+        Trie t;
+        while (t.size() < num)
+            t.add(genRandom(adapter));
+        t.print(adapter, names, std::cout);
+    }
     else
+        if (names) {
+            for(int x = 0; x < num; x++) 
+              std::cout << nameRandom(adapter) << std::endl;
+         }
+        else
         for(int x = 0; x < num; x++) {
             for(bool b : genRandom(adapter))
                 std::cout << b << " ";
