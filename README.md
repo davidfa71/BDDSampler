@@ -25,6 +25,6 @@ or `not X`.
 This program uses `dddmp` file format version 3.0 and will not work with `dddmp` files of prior
 versions. The difference between versions 2.0 and 3.0 is the addition of the `.varnames` field.
 
-## A Python wapper for BDDSampler
+## A Python wrapper of BDDSampler
 
 A Python wrapper of BDDSampler is available at [https://github.com/rheradio/bdd4va/](https://github.com/rheradio/bdd4va/).
