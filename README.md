@@ -1,9 +1,8 @@
 # BDDSampler: a uniform random sampler from BDD files in dddmp format.
 
-BDDSampler is a software artifact of the following paper submitted for publication to Empirical Software Engineering (2021):
+BDDSampler is a software artifact of the paper:
 
-*Ruben Heradio, David Fernandez-Amoros, José Galindo, David Benavides, and Don Batory*. 
-**Uniform and Scalable Sampling of Highly Configurable Systems.**
+[*R. Heradio, D. Fernandez-Amoros, J. Galindo, D. Benavides, and D. Batory, "Uniform and Scalable Sampling of Highly Configurable Systems, Empirical Software Engineering, vol. 27, no. 44, 2022.*](https://doi.org/10.1007/s10664-021-10102-5)
 
 ## Instructions 
 
@@ -25,3 +24,7 @@ or `not X`.
 
 This program uses `dddmp` file format version 3.0 and will not work with `dddmp` files of prior
 versions. The difference between versions 2.0 and 3.0 is the addition of the `.varnames` field.
+
+## A Python wapper for BDDSampler
+
+A Python wrapper of BDDSampler is available at [https://github.com/rheradio/bdd4va/](https://github.com/rheradio/bdd4va/).
