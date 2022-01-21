@@ -2,7 +2,7 @@
 
 BDDSampler is a software artifact of the paper:
 
-[*R. Heradio, D. Fernandez-Amoros, J. Galindo, D. Benavides, and D. Batory, "Uniform and Scalable Sampling of Highly Configurable Systems, Empirical Software Engineering, vol. 27, no. 44, 2022.*](https://doi.org/10.1007/s10664-021-10102-5)
+[*R. Heradio, D. Fernandez-Amoros, J. Galindo, D. Benavides, and D. Batory, "Uniform and Scalable Sampling of Highly Configurable Systems", Empirical Software Engineering, vol. 27, no. 44, 2022.*](https://doi.org/10.1007/s10664-021-10102-5)
 
 ## Instructions 
 
