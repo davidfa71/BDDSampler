@@ -27,6 +27,7 @@
 #include <math.h>
 #include <execinfo.h>
 #include <unordered_map>
+#include <limits>
 
 class synExp;
 
