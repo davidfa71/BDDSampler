@@ -27,7 +27,7 @@ else
     endif
     ifeq ($(UNAME_S),Darwin)
         CXXFLAGS=-fcolor-diagnostics -O3 -Wno-deprecated-register -std=c++11 -stdlib=libc++ -g -mtune=native
-	LDFLAGS += -Wl,-stack_size,0x40000000,-stack_addr,0xf0000000
+	LDFLAGS += -Wl
     endif
     UNAME_P := $(shell uname -p)
     ifeq ($(UNAME_P),x86_64)
