@@ -53,7 +53,7 @@ extern "C" {
 #define DDDMP_RELATIVE_ID   2
 #define DDDMP_RELATIVE_1    3
 
-#define DDDMP_MAXSTRLEN 500
+#define DDDMP_MAXSTRLEN 8192
 
 /*---------------------------------------------------------------------------*/
 /* Type declarations                                                         */
